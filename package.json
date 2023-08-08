@@ -7,7 +7,7 @@
     "npm": ">=7.24.0"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -29,6 +29,7 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "husky": "^8.0.3",
     "prettier": "^3.0.1"
   }
