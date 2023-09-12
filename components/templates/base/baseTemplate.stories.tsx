@@ -1,6 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
-import BaseTemplate from './BaseTemplate';
-import { BaseTemplateProps } from './BaseTemplate';
+import BaseTemplate, { BaseTemplateProps } from './BaseTemplate';
 import { mockBaseTemplateProps } from './baseTemplate.mocks';
 
 export default {
