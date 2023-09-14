@@ -3,7 +3,7 @@ import Button, { ButtonProps } from './Button';
 import { mockButtonProps } from './button.mock';
 
 export default {
-  title: 'Templates/Button',
+  title: 'Components/Button',
   component: Button,
   argTypes: {},
   decorators: [
