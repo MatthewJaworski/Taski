@@ -14,12 +14,15 @@ const Home = async () => {
           boost your productivity
         </p>
         <div className="flex gap-2 justify-center mt-5">
-          <Button size="large">
-            <Link href={href}>Get started</Link>
-          </Button>
-          <Button size="large" intent="secondary">
-            <Link href="/info">Learn more</Link>
-          </Button>
+          <Link href={href}>
+            <Button size="large">Get started</Button>
+          </Link>
+
+          <Link href="/info">
+            <Button size="large" intent="secondary">
+              Get more info
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

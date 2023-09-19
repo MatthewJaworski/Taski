@@ -60,7 +60,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
           </div>
         </>
       ) : (
-        <ArrowRight size={30} onClick={() => setIsOpen(true)} />
+        <ArrowRight className='ml-6 relative' size={30} onClick={() => setIsOpen(true)} />
       )}
     </div>
   );

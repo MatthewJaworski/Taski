@@ -10,9 +10,6 @@ const CreateUserWhenNotMatch = async () => {
       clerkId: user?.id,
     },
   });
-  console.log('MATCH', match);
-  console.log('USER', user);
-
   if (!match) {
     await createUser(
       user?.id as string,
@@ -24,7 +21,7 @@ const CreateUserWhenNotMatch = async () => {
 
 const NewUserPage = async () => {
   await CreateUserWhenNotMatch();
-  console.log('NewUserPageKURWO');
+
   return (
     <section>
       <h1 className="text-white">Loading...</h1>
