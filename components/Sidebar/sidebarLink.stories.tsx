@@ -6,6 +6,13 @@ export default {
   title: 'Components/SidebarLink',
   component: SidebarLink,
   argTypes: {},
+  decorators: [
+    (Story) => (
+      <div className="bg-background p-6 text-white container w-screen h-screen justify-center flex items-center">
+        <Story />
+      </div>
+    ),
+  ],
 } as Meta<typeof SidebarLink>;
 
 const Template: StoryFn<typeof SidebarLink> = (args: any) => (

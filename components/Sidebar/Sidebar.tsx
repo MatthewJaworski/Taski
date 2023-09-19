@@ -19,20 +19,20 @@ const Sidebar: React.FC<SidebarProps> = () => {
     ? ' max-w-[300px] justify-between bg-black/20 shadow-lg  px-6 py-10'
     : 'max-w-[0px]  justify-center items-center';
   const sidebarLinks = [
-    { icon: Globe, text: 'Overview' , href: '/overview'},
-    { icon: Book, text: 'Tasks' , href: '/tasks'},
-    { icon: Bell, text: 'Notifications' , href: '/notifications'},
+    { icon: Globe, text: 'Overview', href: '/overview' },
+    { icon: Book, text: 'Tasks', href: '/tasks' },
+    { icon: Bell, text: 'Notifications', href: '/notifications' },
     { icon: Settings, text: 'Settings', href: '/settings' },
   ];
   return (
     <div
-      className={`text-white flex  max-w-[300pxpx]  flex-col duration-200   h-screen ease-out ${classes}`}
+      className={`text-white flex max-w-[300pxpx]  flex-col duration-200   h-screen ease-out ${classes}`}
     >
       {isOpen ? (
         <>
           <div>
             <h1 className="text-primary text-2xl font-bold mb-10">Taski</h1>
-            <SidebarLink Icon={Plus} text="New Project" href="/new-project"/>
+            <SidebarLink Icon={Plus} text="New Project" href="/new-project" />
             <p className="mt-10 font-bold">Menu</p>
             <ul className="flex justify-center items-center flex-col gap-5">
               {sidebarLinks.map(({ icon: Icon, text, href }, i) => (
@@ -60,7 +60,11 @@ const Sidebar: React.FC<SidebarProps> = () => {
           </div>
         </>
       ) : (
-        <ArrowRight className='ml-6 relative' size={30} onClick={() => setIsOpen(true)} />
+        <ArrowRight
+          className="ml-6 relative z-10"
+          size={30}
+          onClick={() => setIsOpen(true)}
+        />
       )}
     </div>
   );

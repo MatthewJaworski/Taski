@@ -13,12 +13,14 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body
-          className={`${inter.className} flex w-screen h-screen bg-background text-white`}
+          className={`${inter.className} flex w-screen h-screen gap-2 bg-background text-white`}
         >
           <aside>
             <Sidebar />
           </aside>
-          {children}
+          <main className="flex w-screen h-screen flex-wrap overflow-auto scrollbar">
+            {children}
+          </main>
         </body>
       </html>
     </ClerkProvider>

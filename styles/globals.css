@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: #8accbd;
+  --secondary: #ebce51;
+  --accent: #a04659;
+  --background: #071f21;
+}
+
 * {
   box-sizing: border-box;
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: var(--secondary);
+    margin: 10px 0;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: var(--background);
+    border-radius: 100vh;
+    border: 3px solid var(--secondary);
+  }
 }
