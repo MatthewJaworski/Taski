@@ -1,7 +1,7 @@
 import { VariantProps, cva } from 'class-variance-authority';
 
 const containerClass = cva(
-  [' m-4', 'mx-auto', 'container', 'rounded-xl', 'p-4', 'drop-shadow-xl'],
+  [ 'mx-auto', 'container', 'rounded-xl', 'p-4', 'drop-shadow-xl'],
   {
     variants: {
       intent: {
@@ -22,10 +22,11 @@ export interface ContainerProps
 const Container: React.FC<ContainerProps> = ({
   children,
   intent,
+  className,
   ...props
 }) => {
   return (
-    <div {...props} className={containerClass({ intent })}>
+    <div {...props} className={containerClass({ intent, className })}>
       {children}
     </div>
   );

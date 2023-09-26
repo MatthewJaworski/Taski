@@ -43,7 +43,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
               onClick={() => setIsOpen(false)}
               className="flex justify-center items-center mt-5"
             >
-              <ArrowLeft size={30} />
+              <ArrowLeft className='cursor-pointer' size={30} />
             </div>
           </div>
           <div className="text-white">
@@ -61,7 +61,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
         </>
       ) : (
         <ArrowRight
-          className="ml-6 relative z-10"
+          className="ml-6 relative z-10 cursor-pointer"
           size={30}
           onClick={() => setIsOpen(true)}
         />

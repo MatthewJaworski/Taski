@@ -1,3 +1,4 @@
+import Container from '@/components/Container/Container';
 import Sidebar from '@/components/Sidebar/Sidebar';
 import '@/styles/globals.css';
 import { ClerkProvider } from '@clerk/nextjs';
@@ -19,7 +20,7 @@ export default function RootLayout({
             <Sidebar />
           </aside>
           <main className="flex w-screen h-screen flex-wrap overflow-auto scrollbar">
-            {children}
+            <Container className="my-4 flex ">{children}</Container>
           </main>
         </body>
       </html>
