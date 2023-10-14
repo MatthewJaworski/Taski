@@ -26,28 +26,28 @@ const Sidebar: React.FC<SidebarProps> = () => {
   ];
   return (
     <div
-      className={`text-white flex max-w-[300pxpx]  flex-col duration-200   h-screen ease-out ${classes}`}
+      className={`flex h-screen max-w-[300pxpx]  flex-col text-white   duration-200 ease-out ${classes}`}
     >
       {isOpen ? (
         <>
           <div>
-            <h1 className="text-primary text-2xl font-bold mb-10">Taski</h1>
+            <h1 className="mb-10 text-2xl font-bold text-primary">Taski</h1>
             <SidebarLink Icon={Plus} text="New Project" href="/new-project" />
             <p className="mt-10 font-bold">Menu</p>
-            <ul className="flex justify-center items-center flex-col gap-5">
+            <ul className="flex flex-col items-center justify-center gap-5">
               {sidebarLinks.map(({ icon: Icon, text, href }, i) => (
                 <SidebarLink key={i} Icon={Icon} text={text} href={href} />
               ))}
             </ul>
             <div
               onClick={() => setIsOpen(false)}
-              className="flex justify-center items-center mt-5"
+              className="mt-5 flex items-center justify-center"
             >
-              <ArrowLeft className='cursor-pointer' size={30} />
+              <ArrowLeft className="cursor-pointer" size={30} />
             </div>
           </div>
           <div className="text-white">
-            <p className="mt-10 mb-3 font-bold">Profile</p>
+            <p className="mb-3 mt-10 font-bold">Profile</p>
             <UserButton
               appearance={{
                 elements: {
@@ -61,7 +61,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
         </>
       ) : (
         <ArrowRight
-          className="ml-6 relative z-10 cursor-pointer"
+          className="relative z-10 ml-6 cursor-pointer"
           size={30}
           onClick={() => setIsOpen(true)}
         />

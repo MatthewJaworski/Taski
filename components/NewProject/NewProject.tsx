@@ -5,6 +5,7 @@ import { IprojectRequestBody, TProjectKeys } from '@/types/project';
 import { FormEvent } from 'react';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
+
 export interface NewProjectProps {}
 
 const NewProject: React.FC<NewProjectProps> = () => {
@@ -26,8 +27,8 @@ const NewProject: React.FC<NewProjectProps> = () => {
 
   return (
     <>
-      <h1 className="text-5xl font-semibold max-w-lg">{title}</h1>
-      <form className="w-full mt-12" onSubmit={handleSubmit}>
+      <h1 className="max-w-lg text-5xl font-semibold">{title}</h1>
+      <form className="mt-12 w-full" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-6">
           <Input
             required
@@ -46,7 +47,7 @@ const NewProject: React.FC<NewProjectProps> = () => {
           />
         </div>
         <div className="mt-6">
-          <p className="font-semibold text-sm mb-1">Tags</p>
+          <p className="mb-1 text-sm font-semibold">Tags</p>
           <div className="grid grid-cols-2 gap-4">
             {KEY_TAGS.map((tag) => {
               return (
@@ -62,7 +63,7 @@ const NewProject: React.FC<NewProjectProps> = () => {
             })}
           </div>
         </div>
-        <Button type="submit" intent="secondary" className="w-full mt-7">
+        <Button type="submit" intent="secondary" className="mt-7 w-full">
           {addButton}
         </Button>
       </form>

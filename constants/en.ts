@@ -20,4 +20,9 @@ export const text = {
       websiteDesign: 'Website Design',
     },
   },
+  projectCard: {
+    button: {
+      open: 'Open',
+    },
+  },
 } as const;

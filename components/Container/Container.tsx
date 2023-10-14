@@ -1,7 +1,7 @@
 import { VariantProps, cva } from 'class-variance-authority';
 
 const containerClass = cva(
-  [ 'mx-auto', 'container', 'rounded-xl', 'p-4', 'drop-shadow-xl'],
+  ['mx-auto', 'container', 'rounded-xl', 'p-4', 'drop-shadow-xl'],
   {
     variants: {
       intent: {

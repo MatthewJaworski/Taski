@@ -66,7 +66,7 @@ const Input: React.FC<InputProps> = ({
 }) => {
   return (
     <div className={wrapperClasses({ labelPosition })}>
-      <label className="text-sm m-1 font-semibold" htmlFor={id}>
+      <label className="m-1 text-sm font-semibold" htmlFor={id}>
         {name}
       </label>
       <input
