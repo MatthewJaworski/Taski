@@ -1,10 +1,13 @@
+'use client';
 import { text } from '@/constants/en';
 import { KEY_TAGS } from '@/constants/tags';
 import { createNewProject } from '@/lib/api';
 import { IprojectRequestBody, TProjectKeys } from '@/types/project';
-import { FormEvent } from 'react';
+import { useRouter } from 'next/navigation';
+import { FormEvent, useState } from 'react';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
+import Loader from '../Loader/Loader';
 
 export interface NewProjectProps {}
 
@@ -12,7 +15,8 @@ const NewProject: React.FC<NewProjectProps> = () => {
   const {
     newProject: { addButton, title, placeholders },
   } = text;
-
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -22,7 +26,10 @@ const NewProject: React.FC<NewProjectProps> = () => {
         requestBody[key as TProjectKeys] = value;
       }
     });
+    setIsLoading(true);
     await createNewProject(requestBody);
+    router.refresh();
+    router.push('/overview');
   };
 
   return (
@@ -63,9 +70,13 @@ const NewProject: React.FC<NewProjectProps> = () => {
             })}
           </div>
         </div>
-        <Button type="submit" intent="secondary" className="mt-7 w-full">
-          {addButton}
-        </Button>
+        {isLoading ? (
+          <Loader wrapperClass="flex justify-center items-center " />
+        ) : (
+          <Button type="submit" intent="secondary" className="mt-7 w-full">
+            {addButton}
+          </Button>
+        )}
       </form>
     </>
   );

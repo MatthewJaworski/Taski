@@ -3,7 +3,7 @@ import ProjectCard, { ProjectCardProps } from './ProjectCard';
 import { mockProjectCardProps } from './projectCard.mocks';
 
 export default {
-  title: 'Templates/ProjectCard',
+  title: 'Components/ProjectCard',
   component: ProjectCard,
   argTypes: {},
   decorators: [

@@ -1,4 +1,3 @@
-'use client';
 import Container from '@/components/Container/Container';
 import NewProject from '@/components/NewProject/NewProject';
 const Home = () => {

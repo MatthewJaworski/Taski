@@ -6,7 +6,7 @@ import Button from '../Button/Button';
 
 export interface ProjectCardProps {
   name: string;
-  description: string;
+  description: string | null;
   tags: TTagKeys[];
 }
 
@@ -20,13 +20,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   tags,
 }) => {
   return (
-    <div className="flex max-w-sm flex-col bg-black/20 p-4 shadow-lg">
+    <div className="flex min-h-[300px] w-full max-w-sm flex-col justify-around bg-black/20 p-4 shadow-lg">
       <Box className="mb-4" />
       <h3 className="mb-2 truncate text-xl font-bold">{name}</h3>
       <div className="mb-4 overflow-hidden">
         {tags.map((tag) => {
           return (
-            <span key={tag} className="color mr-2 rounded bg-secondary p-1 text-sm text-black">
+            <span
+              key={tag}
+              className="color mr-2 rounded bg-secondary p-1 text-sm text-black"
+            >
               {capitalize(tag)}
             </span>
           );

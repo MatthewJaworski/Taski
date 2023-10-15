@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        'auto-fit': 'repeat(auto-fit, minmax(23rem, 1fr))',
+      },
       colors: {
         primary: '#8ACCBD',
         secondary: '#EBCE51',
